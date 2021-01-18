@@ -9,9 +9,9 @@ const port = process.env.Port;
 const filename = `${process.env.FolderName}/${process.env.FileName}`;
 
 const storage = new Storage({
-    keyFilename: 'fileupload-62e6b-firebase-adminsdk-33nsw-84a838db74.json',
+    keyFilename: process.env.KeyFileName,
  });
- const bucketName = 'gs://fileupload-62e6b.appspot.com';
+ const bucketName = process.env.BucketName;
 
 app.get('/', (req, res) => {
     let txt = fs.readFileSync(`${process.env.FolderName}/${process.env.RawHtmlFile}`).toString();
