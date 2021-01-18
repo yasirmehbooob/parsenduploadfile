@@ -14,7 +14,7 @@ const storage = new Storage({
  const bucketName = 'gs://fileupload-62e6b.appspot.com';
 
 app.get('/', (req, res) => {
-    let txt = fs.readFileSync('custom.html').toString();
+    let txt = fs.readFileSync(`${process.env.FolderName}/${process.env.RawHtmlFile}`).toString();
     // let txt = '<body><a class="a-class"></a><div class="demo" id="hi">fe</div><div class="demo2" id="h2">fe2</div><p></p><p><span></span></p><p></p><p></p><div></div><p>87</p></body>';
     res.send(parseHtmlString(txt));
 });
